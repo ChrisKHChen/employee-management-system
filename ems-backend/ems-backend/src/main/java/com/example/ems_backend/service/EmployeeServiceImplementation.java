@@ -13,28 +13,32 @@ public class EmployeeServiceImplementation implements EmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    // Create
     @Override
     public Employee createEmployee(Employee employee){
-        return null;
+        return employeeRepository.save(employee);
     }
 
+    // Read
     @Override
     public Optional<Employee> getEmployeeById(Long id){
-        return Optional.empty();
+        return employeeRepository.findById(id);
     }
 
     @Override
     public List<Employee> getAllEmployees(){
-        return List.of();
+        return employeeRepository.findAll();
     }
 
+    // Update
     @Override
     public Employee updateEmployee(Long id, Employee employee){
         return null;
     }
 
+    // Delete
     @Override
     public void deleteEmployee(Long id){
-
+        employeeRepository.deleteById(id);
     }
 }
