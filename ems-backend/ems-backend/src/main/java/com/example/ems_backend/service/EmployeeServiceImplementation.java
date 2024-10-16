@@ -33,7 +33,30 @@ public class EmployeeServiceImplementation implements EmployeeService{
     // Update
     @Override
     public Employee updateEmployee(Long id, Employee employee){
-        return null;
+        if (employeeRepository.existsById(id)) {
+            Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+            if (optionalEmployee.isPresent()){
+                Employee existingEmployee = optionalEmployee.get();
+                existingEmployee.setFirstName(employee.getFirstName());
+                existingEmployee.setMiddleName(employee.getMiddleName());
+                existingEmployee.setLastName(employee.getLastName());
+                existingEmployee.setGender(employee.getGender());
+                existingEmployee.setDateOfBirth(employee.getDateOfBirth());
+                existingEmployee.setEmail(employee.getEmail());
+                existingEmployee.setPhoneNumber(employee.getPhoneNumber());
+                existingEmployee.setCountry(employee.getCountry());
+                existingEmployee.setPosition(employee.getPosition());
+                existingEmployee.setDepartment(employee.getDepartment());
+                existingEmployee.setHireDate(employee.getHireDate());
+                existingEmployee.setContractEndDate(employee.getContractEndDate());
+                existingEmployee.setSalary(employee.getSalary());
+                return employeeRepository.save(existingEmployee);
+            }else{
+                return null;
+            }
+        }else{
+            return null;
+        }
     }
 
     // Delete
