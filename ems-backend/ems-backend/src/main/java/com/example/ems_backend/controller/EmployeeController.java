@@ -5,6 +5,7 @@ import com.example.ems_backend.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -17,5 +18,25 @@ public class EmployeeController{
     @PostMapping("/add")
     public Employee createEmployee(@RequestBody Employee employee){
         return employeeService.createEmployee(employee);
+    }
+
+    @GetMapping("/get/{id}")
+    public Optional<Employee> getEmployeeById(@PathVariable Long id){
+        return employeeService.getEmployeeById(id);
+    }
+
+    @GetMapping("/get")
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
+    }
+
+    @PutMapping("/update/{id}")
+    public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee){
+        return employeeService.updateEmployee(id, employee);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteEmployee(@PathVariable Long id){
+        employeeService.deleteEmployee(id);
     }
 }
