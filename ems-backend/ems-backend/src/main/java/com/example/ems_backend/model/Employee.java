@@ -1,11 +1,10 @@
 package com.example.ems_backend.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 @Getter
@@ -16,7 +15,7 @@ import java.util.Date;
 public class Employee{
     // Unique Identifiers
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // Personal Information
@@ -29,7 +28,7 @@ public class Employee{
     @Column(name = "gender")
     private String gender;
     @Column(name = "date_of_birth", nullable = false)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     // Contact Information
     @Column(name = "email", nullable = false, unique = true)
@@ -45,9 +44,9 @@ public class Employee{
     @Column(name = "department", nullable = false)
     private String department;
     @Column(name = "hire_date", nullable = false)
-    private Date hireDate;
+    private LocalDate hireDate;
     @Column(name = "contract_end_date")
-    private Date contractEndDate;
+    private LocalDate contractEndDate;
     @Column(name = "salary", nullable = false)
     private Double salary;
 }
