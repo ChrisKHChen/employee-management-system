@@ -18,8 +18,6 @@ public class Employee{
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
-    @Column(name = "employee_id", nullable = false, unique = true)
-    private String employeeId;
 
     // Personal Information
     @Column(name = "first_name", nullable = false)
