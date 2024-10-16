@@ -5,6 +5,7 @@ import com.example.ems_backend.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -22,6 +23,11 @@ public class EmployeeController{
     @GetMapping("/get/{id}")
     public Optional<Employee> getEmployeeById(@PathVariable Long id){
         return employeeService.getEmployeeById(id);
+    }
+
+    @GetMapping("/get")
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
     }
 
     @DeleteMapping("/delete/{id}")
