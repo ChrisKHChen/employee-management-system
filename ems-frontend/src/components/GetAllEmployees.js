@@ -17,7 +17,7 @@ export default function GetAllEmployees() {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await fetch('http://localhost:8080/employee/get'); // Update to your endpoint
+        const response = await fetch('http://localhost:8080/employee/get');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -33,8 +33,8 @@ export default function GetAllEmployees() {
 
   return (
     <Paper
-      elevation={3} 
-      sx={{ p: 4, mt: 2, maxWidth: '1200px', mx: 'auto' }} 
+      elevation={3}
+      sx={{ p: 4, mt: 2, maxWidth: '1200px', mx: 'auto' }}
     >
       <Typography variant="h5" align="center" gutterBottom>
         All Employees
@@ -43,6 +43,7 @@ export default function GetAllEmployees() {
         <Table>
           <TableHead>
             <TableRow>
+              <TableCell sx={{ width: '100px' }}>ID</TableCell> 
               <TableCell sx={{ width: '150px' }}>First Name</TableCell>
               <TableCell sx={{ width: '150px' }}>Middle Name</TableCell>
               <TableCell sx={{ width: '150px' }}>Last Name</TableCell>
@@ -61,6 +62,7 @@ export default function GetAllEmployees() {
           <TableBody>
             {employees.map((employee) => (
               <TableRow key={employee.id}>
+                <TableCell>{employee.id}</TableCell> 
                 <TableCell>{employee.firstName}</TableCell>
                 <TableCell>{employee.middleName}</TableCell>
                 <TableCell>{employee.lastName}</TableCell>

@@ -14,7 +14,7 @@ const HomePage = () => {
           color="primary" 
           component={Link} 
           to="/add-employee" 
-          sx={{ width: '300px' }} // Set a fixed width for all buttons
+          sx={{ width: '300px' }} 
         >
           Add Employee
         </Button>
@@ -23,7 +23,7 @@ const HomePage = () => {
           color="primary" 
           component={Link} 
           to="/get-employee-by-id" 
-          sx={{ width: '300px' }} // Set a fixed width for all buttons
+          sx={{ width: '300px' }} 
         >
           Get Employee by ID
         </Button>
@@ -32,7 +32,7 @@ const HomePage = () => {
           color="primary" 
           component={Link} 
           to="/get-all-employees" 
-          sx={{ width: '300px' }} // Set a fixed width for all buttons
+          sx={{ width: '300px' }} 
         >
           Get All Employees
         </Button>
@@ -41,7 +41,7 @@ const HomePage = () => {
           color="primary" 
           component={Link} 
           to="/update-employee" 
-          sx={{ width: '300px' }} // Set a fixed width for all buttons
+          sx={{ width: '300px' }} 
         >
           Update Employee
         </Button>
@@ -50,7 +50,7 @@ const HomePage = () => {
           color="primary" 
           component={Link} 
           to="/delete-employee" 
-          sx={{ width: '300px' }} // Set a fixed width for all buttons
+          sx={{ width: '300px' }}
         >
           Delete Employee
         </Button>
