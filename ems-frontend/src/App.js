@@ -1,8 +1,7 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AppBar from './components/AppBar';
-import HomePage from './components/HomePage'; // Adjust this path if needed
+import HomePage from './components/HomePage'; 
 import EmployeeForm from './components/EmployeeForm';
 import GetEmployeeById from './components/GetEmployeeById';
 import GetAllEmployees from './components/GetAllEmployees';
